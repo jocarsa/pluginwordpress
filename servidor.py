@@ -10,7 +10,7 @@ def home():
 
 @app.route('/clientes')
 def clientes():
-    return '[{"nombre":"Jose Vicente"},{"nombre":"Juan"}]'
+    return '[{"nombre":"Jose Vicente","descripcion":"descripcion del primer cliente"},{"nombre":"Juan","descripcion":"descripcion del segundo cliente"}]'
 
 
 if __name__ == '__main__':

@@ -17,7 +17,21 @@ function dameClientes(){
     if (curl_errno($ch)) {
         echo 'cURL Error: ' . curl_error($ch);
     } else {
-        echo $response;
+
+        $data = json_decode($response);
+
+        if (is_array($data)) {
+            echo '<div class="contenido">';
+            
+            foreach ($data as $item) {
+                echo '<article class="entrada">';
+                echo '<h2>' . esc_html($item->nombre) . '</h2>';
+                echo '<p>' . esc_html($item->descripcion) . '</p>';
+                echo '</article>';
+            }
+
+            echo '</div>';
+        }
     }
 
     curl_close($ch);
