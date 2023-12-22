@@ -23,5 +23,6 @@ function dameClientes(){
     curl_close($ch);
 }
 
+add_shortcode("dame_clientes","dameClientes");
 
 ?>
